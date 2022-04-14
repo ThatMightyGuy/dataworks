@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>pr1</title>
+
+        <script src="scripts/two.js"></script>
+        <script src="scripts/trace.js"></script>
+        <script src="scripts/theme-switcher.js"></script>
+        <script src="scripts/modal.js"></script>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script src="scripts/responsive.js"></script>
+
+        <link rel="stylesheet" href="styles/trace.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/theme-switcher.css">
+        <link rel="stylesheet" href="styles/falling-scroll.css">
+        <link rel="stylesheet" href="styles/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Mulish:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="dark">
+        <!-- Header -->
+        <div id="header" class="flex-horizontal header">
+            <a href="index.html" class="fullheight">
+                <img id="logo" class="fullheight" src="res/triforce-red.png" alt="Dataworks">
+            </a>
+            <a class="header-button" id="internet" href="internet.html">Интернет</a>
+            <a class="header-button" id="tv" href="tv.html">Телевидение</a>
+            <a class="header-button" id="to-companies" href="to-companies.html">Компаниям</a>
+            <a class="header-button" id="to-users" href="to-users.html">Абонентам</a>
+            <div class="flex-horizontal" style="margin-left: auto; align-items: center">
+                <p>Темная тема</p>
+                <label class="switch">
+                    <input type="checkbox" id="dark-theme-switch" onclick="setTheme(this.checked)" checked="true">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsive()">
+                <em class="fa fa-bars header-icon"></em>
+            </a>
+            
+        </div>
+        <div class="content-container dark" style="top: 0; background: none;">
+            <div id="trace-flow"></div>
+            <div style="margin: 0; padding: 0">
+                <h1 class="dark-text">DATAWORK<span class="term-cursor-blink">S</span></h1>
+                <h2 class="desc dark-text">Абонентам</h2>
+                <span class="spacer"></span>
+                <div class="falling-scroll">
+                <div class="flex-vertical" style="justify-content: space-evenly">
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Личный кабинет</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">Место силы.</h3>
+                            <p class="dark-text">
+                                В личном кабинете вы можете оплатить подключение, вызвать мастера, просмотреть историю оплаты<br>
+                                или связаться с техподдержкой в режиме живого чата.
+                            </p>
+                            <div class="flex-horizontal" style="margin-top: 20px">
+                                <form action="profile.html">
+                                    <div>
+                                        <input type="text" name="login" placeholder="Логин" class="dark modal-input input-required"><br>
+                                        <input type="password" name="pass" placeholder="Пароль" class="dark modal-input input-required"><br>
+                                        <a href="forgotpass.html">Забыли пароль?</a>
+                                    </div>
+                                    <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                        <input type="submit" name="submit" class="connect-button dark" value="Войти"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="spacer"></span>
+                    <h2 class="desc dark-text">События</h2>
+                    <span class="spacer"></span>
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Отключение в Ленинском районе</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">12:32, 5 апреля 2022 года, вторник</h3>
+                            <p class="dark-text">
+                                В связи с поломкой главной линии сеть во всем Ленинском районе будет либо недоступна, либо скорость<br>
+                                будет сильно ограничена. Ремонтные работы уже ведутся и, по нашим расчетам, сеть будет<br>
+                                снова включена в течение 5 часов. Приносим свои извинения за предоставленные неудобства.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="spacer"></span>
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Атака на датацентры</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">10:15, 1 апреля 2022 года, пятница</h3>
+                            <p class="dark-text">
+                                Наши сети были скомпрометированы отрядом агрессивно настроенных противников. В связи с этим<br>
+                                наши системные администраторы были вынуждены установить по периметру датацентров ловушки<br>
+                                для кроликов, снаряженные большим запасом моркови, что принесло невероятно эффективный<br>
+                                результат - уже через 4 часа все кроличьи силы противника были подавлены.<br>
+                                Согласно нашим сведениям, никакого урона, к счастью, нанесено не было.<br>
+                                Взгляните на календарь, и будьте внимательны!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/falling-scroll.js"></script>
+    </body>
+</html>
+
+

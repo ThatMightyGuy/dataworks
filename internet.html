@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>pr1</title>
+
+        <script src="scripts/two.js"></script>
+        <script src="scripts/trace.js"></script>
+        <script src="scripts/theme-switcher.js"></script>
+        <script src="scripts/modal.js"></script>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script src="scripts/responsive.js"></script>
+
+        <link rel="stylesheet" href="styles/trace.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/theme-switcher.css">
+        <link rel="stylesheet" href="styles/falling-scroll.css">
+        <link rel="stylesheet" href="styles/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Mulish:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="dark">
+        <!-- Header -->
+        <div id="header" class="flex-horizontal header">
+            <a href="index.html" class="fullheight">
+                <img id="logo" class="fullheight" src="res/triforce-red.png" alt="Dataworks">
+            </a>
+            <a class="header-button" id="internet" href="internet.html">Интернет</a>
+            <a class="header-button" id="tv" href="tv.html">Телевидение</a>
+            <a class="header-button" id="to-companies" href="to-companies.html">Компаниям</a>
+            <a class="header-button" id="to-users" href="to-users.html">Абонентам</a>
+            <div class="flex-horizontal" style="margin-left: auto; align-items: center">
+                <p>Темная тема</p>
+                <label class="switch">
+                    <input type="checkbox" id="dark-theme-switch" onclick="setTheme(this.checked)" checked="true">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsive()">
+                <em class="fa fa-bars header-icon"></em>
+            </a>
+            
+        </div>
+        <div class="content-container dark" style="top: 0; background: none;">
+            <div id="trace-flow"></div>
+            <div style="margin: 0; padding: 0">
+                <h1 class="dark-text">DATAWORK<span class="term-cursor-blink">S</span></h1>
+                <h2 class="desc dark-text">Интернет</h2>
+                <span class="spacer"></span>
+                <div class="falling-scroll">
+                    <div class="flex-horizontal" style="justify-content: space-evenly">
+                        <div class="connect-option connect-best-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">1000 Мбит/с</h2>
+                            <div class="connect-best-option-background">
+                                <div class="connect-option-padding">
+                                    <h3 class="connect-desc">Максимальная скорость</h3>
+                                </div>
+                            </div>
+                            <div class="connect-option-padding">
+                                <ul>
+                                    <li>950 р. в месяц</li>
+                                    <li>350 телеканалов</li>
+                                    <li>UHD качество</li>
+                                    <li>Доступ к публичным сетям Wi-Fi</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button connect-best-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connect-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">250 Мбит/с</h2>
+                            <div class="connect-option-padding">
+                                <h3 class="connect-desc">Оптимальный</h3>
+                                <ul>
+                                    <li>450 р. в месяц</li>
+                                    <li>250 телеканалов</li>
+                                    <li>HD качество</li>
+                                    <li>Бесплатное техобслуживание</li>
+                                    <li>Доступ к публичным сетям Wi-Fi</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connect-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">100 Мбит/с</h2>
+                            <div class="connect-option-padding">
+                                <h3 class="connect-desc">Стандарт</h3>
+                                <ul>
+                                    <li>300 р. в месяц</li>
+                                    <li>250 телеканалов</li>
+                                    <li>HD качество</li>
+                                    <li>Бесплатное техобслуживание</li>
+                                    <li>Доступ к публичным сетям Wi-Fi</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="spacer"></span>
+                <h2 class="desc dark-text">Дополнительные услуги</h2>
+                <span class="spacer"></span>
+                <div class="flex-vertical" style="justify-content: space-evenly">
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Оплата</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">Настоящая магия.</h3>
+                            <p class="dark-text">
+                                Мы поддерживаем все современные способы оплаты, а также оплату наличными.<br>
+                                Вы можете оплатить подключение в любом из наших офисов, расположенных по адресам:
+                            </p>
+                            <br>
+                            <ul>
+                                <li>пл. Победы, 35а</li>
+                                <li>ТРЦ «Донецк Сити», ул. Артёма, 130</li>
+                                <li>ТЦ «Караван», ул. 230-й Стрелковой Дивизии, 1a</li>
+                                <li>г. Макеевка, пр. Генерала Данилова, 71а</li>
+                                <li>г. Докучаевск, ул. Центральная, 78</li>
+                            </ul>
+                            <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                <button class="connect-button dark" onclick="showModal('connect-modal')">Оплатить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="spacer"></span>
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Статический IP-адрес</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">Домашний хостинг</h3>
+                            <p class="dark-text">
+                                Назначен провайдером на неограниченное время. Главное отличие статического IP-адреса от динамического<br>
+                                состоит в том, что динамический IP-адрес может меняться при каждом новом подключении. Может понадобится:
+                            </p>
+                            <br>
+                            <ul>
+                                <li>при использовании компьютера в качестве сервера или хоста сайта</li>
+                                <li>для работы некоторых файлообменных систем</li>
+                                <li>для работы сервисов видеонаблюдения и других охранных систем</li>
+                                <li>для корректной работы IP-телефонии</li>
+                            </ul>
+                            <h3>60 ₽</h3>
+                            <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                <button class="connect-button dark" onclick="showModal('connect-modal')">Арендовать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="connect-modal" class="modal">
+                <div class="modal-content dark">
+                    <div class="flex-horizontal" style="align-items: center">
+                        <h2>Подключиться</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="flex-horizontal">
+                        <form action="">
+                            <div class="flex-horizontal" style="align-items: center">
+                                <div>
+                                    <input type="text" name="name" placeholder="Ваше имя" class="dark modal-input input-required"><br>
+                                    <input type="text" name="phone" placeholder="Ваш телефон" class="dark modal-input input-required"><br>
+                                    <input type="text" name="email" placeholder="Ваш e-mail" class="dark modal-input"><br>
+                                    <p>Красным выделены <em>обязательные</em> поля</p>
+                                </div>
+                                <p>
+                                    Наш консультант позвонит вам<br>
+                                    в течение следующих 3 часов и<br>
+                                    постарается ответить на все<br>
+                                    ваши вопросы.<br>
+                                    Мы ценим ваше время, а также<br>
+                                    надеемся, что вы выберете нас.
+                                </p>
+                            </div>
+                            <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                <input type="submit" name="submit" class="connect-button dark"></input>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/falling-scroll.js"></script>
+    </body>
+</html>
+
+

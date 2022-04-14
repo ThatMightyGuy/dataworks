@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>pr1</title>
+
+        <script src="scripts/two.js"></script>
+        <script src="scripts/trace.js"></script>
+        <script src="scripts/theme-switcher.js"></script>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script src="scripts/responsive.js"></script>
+
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/trace.css">
+        <link rel="stylesheet" href="styles/theme-switcher.css">
+        <link rel="stylesheet" href="styles/falling-scroll.css">
+        <link rel="stylesheet" href="styles/responsive.css">
+        <link rel="stylesheet" href="styles/slideshow.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Mulish:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="dark">
+        <!-- Header -->
+        <div id="header" class="flex-horizontal header">
+            <a href="index.html" class="fullheight">
+                <img id="logo" class="fullheight" src="res/triforce-red.png" alt="Dataworks">
+            </a>
+            <a class="header-button" id="internet" href="internet.html">Интернет</a>
+            <a class="header-button" id="tv" href="tv.html">Телевидение</a>
+            <a class="header-button" id="to-companies" href="to-companies.html">Компаниям</a>
+            <a class="header-button" id="to-users" href="to-users.html">Абонентам</a>
+            <div class="flex-horizontal" style="margin-left: auto; align-items: center">
+                <p>Темная тема</p>
+                <label class="switch">
+                    <input type="checkbox" id="dark-theme-switch" onclick="setTheme(this.checked)" checked="true">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsive()">
+                <em class="fa fa-bars header-icon"></em>
+            </a>
+            
+        </div>
+        <div class="content-container dark" style="top: 0; background: none;">
+            <div id="trace-flow"></div>
+            <div style="margin: 0; padding: 0">
+                <h1 class="dark-text">DATAWORK<span class="term-cursor-blink">S</span></h1>
+                <h2 class="desc dark-text">Телевидение</h2>
+                <span class="spacer"></span>
+                <p class="dark-text">
+                    Мы предоставляем каждому клиенту доступ к интернет-телевидению, как минимум в Full HD качестве.<br>
+                    Список каналов выбираете вы, а мы каждую неделю подбираем для вас наиболее подходящие каналы<br>
+                    и предлагаем вам подборку по вашим предпочтениям.<br>
+                    Наше приложение DATAWORKS также позволяет записать телепередачу для просмотра в любое удобное вам время.<br>
+                    Доступно на LG WebOS, Samsung Smart TV, а также на Android, iOS, Windows, Debian, Ubuntu и других платформах.
+                </p>
+                <div class="flex-vertical" style="justify-content: space-evenly">
+                    <div id="tv-slideshow" class="slideshow falling-scroll">
+                        <button class="slideshow-button" onclick="advance(domToContainerId(this.parentNode), -1)" style="left: 0">
+                            <em class="fa fa-chevron-left"></em>
+                        </button>
+                        
+                        <img class="slideshow-image slideshow-image-current" src="res/netflix-1.png" alt="netflix">
+                        <img class="slideshow-image" src="res/roku-1.jpg" alt="roku">
+
+                        <button class="slideshow-button" onclick="advance(domToContainerId(this.parentNode), 1)" style="right: 0">
+                            <em class="fa fa-chevron-right"></em>
+                        </button>
+                    </div>
+                    <span class="spacer"></span>
+                    <h2 class="desc dark-text">Просмотр на телевизоре без функции Smart</h2>
+                    <span class="spacer"></span>
+                    <div class="flex-horizontal">
+                        <div>
+                            <p class="dark-text">    
+                                Для просмотра IPTV на телевизоре необходим цифровой медиаплеер -<br>
+                                небольшое устройство, которое подключается к телевизору и дарит огромное количество мультимедийных функций.<br>
+                                Возможности плеера:
+                            </p>
+                            <ul>
+                                <li>Просмотр каналов IPTV в цифровом качестве</li>
+                                <li>Поддержка HD-каналов</li>
+                                <li>Огромная коллекция фильмов и сериалов в Онлайн-кинотеатре</li>
+                                <li>Программа телепередач для каждого канала</li>
+                                <li>Выбор аудио-дорожек для мультиязычных каналов</li>
+                                <li>Отдельные уровни громкости для каждого канала</li>
+                                <li>Автоматическое обновление</li>
+                                <li>Просмотр видео в полноэкранном режиме и в отдельном окне</li>
+                                <li>Управление с помощью горячих клавиш</li>
+                            </ul>
+                        </div>
+                        <img class="fullheight" src="res/tvip.png" alt="tvip">
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <script src="scripts/falling-scroll.js"></script>
+        <script src="scripts/slideshow.js"></script>
+    </body>
+</html>
+
+

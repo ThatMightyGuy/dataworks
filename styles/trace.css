@@ -1,0 +1,37 @@
+#trace-flow
+{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: -5;
+    opacity: 75%;
+}
+.trace-flow-point
+{
+    fill: #00a0e9;
+    stroke: none;
+    filter: drop-shadow(0 0 3px #00a0e9);
+}
+.dark>#trace-flow
+{
+    stroke: black;
+}
+.light>#trace-flow
+{
+    stroke: #888;
+}
+.trace-flow-trail
+{
+    stroke: #00a0e9;
+    filter: blur(10px);
+    stroke-width: 1;
+}
+.trace-flow-trace
+{
+    stroke-width: 5;
+}

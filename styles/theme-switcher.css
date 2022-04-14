@@ -1,0 +1,18 @@
+.dark
+{
+    background: #202020;
+    color: whitesmoke;
+}
+.light
+{
+    background: whitesmoke;
+    color: #202020;
+}
+.dark-text
+{
+    color: whitesmoke;
+}
+.light-text
+{
+    color: #202020;
+}

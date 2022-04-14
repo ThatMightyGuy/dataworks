@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "InputMono-Regular";
+    src: url("../fonts/Input/InputMono/InputMono/InputMono-Regular.ttf");
+}
+@font-face {
+    font-family: "InputSans-Regular";
+    src: url("../fonts/Input/InputSerif/InputSerif/InputSerif-Regular.ttf");
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #202020;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    padding-top: 5px;
+    border: 1px solid #888; 
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000000df;
+}
+.close {
+    color: #aaa;
+    transition: color 0.3s ease;
+    margin-left: auto;
+    font-size: 28pt;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #de4749;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-input
+{
+    font-family: "InputSerif-Regular", monospace;
+    width: 75%;
+    height: 30px;
+    border: 1px solid #888;
+    padding: 5px 10px;
+    margin: 5px 10px;
+}
+.spacer
+{
+    margin: 0;
+    padding: 2vh;
+    display: inline-block;
+}

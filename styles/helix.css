@@ -1,0 +1,31 @@
+.helix-flow-sine
+{
+    stroke: var(--emerald);
+    stroke-width: 3;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 10px var(--emerald)) brightness(2);
+}
+.helix-flow-cosine
+{
+    stroke: var(--peach);
+    stroke-width: 3;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 10px var(--peach)) brightness(2);
+}
+.helix-flow-sine-background
+{
+    stroke: whitesmoke;
+    stroke-width: 2;
+    opacity: 0.5;
+}
+#helix-flow
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: -1;
+    background: #266652;
+}

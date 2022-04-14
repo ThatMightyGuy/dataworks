@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>pr1</title>
+
+        <script src="scripts/two.js"></script>
+        <script src="scripts/trace.js"></script>
+        <script src="scripts/theme-switcher.js"></script>
+        <script src="scripts/modal.js"></script>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script src="scripts/responsive.js"></script>
+
+        <link rel="stylesheet" href="styles/trace.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/theme-switcher.css">
+        <link rel="stylesheet" href="styles/falling-scroll.css">
+        <link rel="stylesheet" href="styles/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Mulish:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body class="dark">
+        <!-- Header -->
+        <div id="header" class="flex-horizontal header">
+            <a href="index.html" class="fullheight">
+                <img id="logo" class="fullheight" src="res/triforce-red.png" alt="Dataworks">
+            </a>
+            <a class="header-button" id="internet" href="internet.html">Интернет</a>
+            <a class="header-button" id="tv" href="tv.html">Телевидение</a>
+            <a class="header-button" id="to-companies" href="to-companies.html">Компаниям</a>
+            <a class="header-button" id="to-users" href="to-users.html">Абонентам</a>
+            <div class="flex-horizontal" style="margin-left: auto; align-items: center">
+                <p>Темная тема</p>
+                <label class="switch">
+                    <input type="checkbox" id="dark-theme-switch" onclick="setTheme(this.checked)" checked="true">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsive()">
+                <em class="fa fa-bars header-icon"></em>
+            </a>
+            
+        </div>
+        <div class="content-container dark" style="top: 0; background: none;">
+            <div id="trace-flow"></div>
+            <div style="margin: 0; padding: 0">
+                <h1 class="dark-text">DATAWORK<span class="term-cursor-blink">S</span></h1>
+                <h2 class="desc dark-text">Компаниям</h2>
+                <span class="spacer"></span>
+                <div class="falling-scroll">
+                    <div class="flex-horizontal" style="justify-content: space-evenly">
+                        <div class="connect-option connect-best-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">10 Гбит/с</h2>
+                            <div class="connect-best-option-background">
+                                <div class="connect-option-padding">
+                                    <h3 class="connect-desc">Датацентр</h3>
+                                </div>
+                            </div>
+                            <div class="connect-option-padding">
+                                <ul>
+                                    <li>5700 р. в месяц</li>
+                                    <li>57000 р. в год</li>
+                                    <li>Техподдержка 24/7</li>
+                                    <li>Статический IP-адрес</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button connect-best-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connect-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">5 Гбит/с</h2>
+                            <div class="connect-option-padding">
+                                <h3 class="connect-desc">Медиакомпания</h3>
+                                <ul>
+                                    <li>2500 р. в месяц</li>
+                                    <li>25000 р. в год</li>
+                                    <li>Бесплатное техобслуживание</li>
+                                    <li>Техподдержка 24/7</li>
+                                    <li>Статический IP-адрес</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connect-option falling-scroll">
+                            <h2 class="connect-title connect-option-padding">2 Гбит/с</h2>
+                            <div class="connect-option-padding">
+                                <h3 class="connect-desc">Стандарт</h3>
+                                <ul>
+                                    <li>1500 р. в месяц</li>
+                                    <li>15000 р. в год</li>
+                                    <li>Бесплатное техобслуживание</li>
+                                    <li>Техподдержка 24/7</li>
+                                    <li>Статический IP-адрес</li>
+                                </ul>
+                                <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                    <button class="connect-button dark" onclick="showModal('connect-modal')">Подключиться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="spacer"></span>
+                <h2 class="desc dark-text">Дополнительные услуги</h2>
+                <span class="spacer"></span>
+                <div class="flex-vertical" style="justify-content: space-evenly">
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Оплата</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">Настоящая магия.</h3>
+                            <p class="dark-text">
+                                Для корпоративных клиентов оплата идет на счет ЦРБ 0036816372800
+                            </p>
+                        </div>
+                    </div>
+                    <span class="spacer"></span>
+                    <div class="connect-option falling-scroll" style="width: 100%">
+                        <h2 class="connect-title connect-option-padding">Первоначальная настройка</h2>
+                        <div class="connect-option-padding">
+                            <h3 class="connect-desc">Еще немного магии.</h3>
+                            <p class="dark-text">
+                                Мы предоставляем услуги системного администратора для первоначальной установки и настройки<br>
+                                серверного/сетевого оборудования и программного обеспечения. Стоимость услуги начинается от<br>
+                                2500 р. и повышается на 500 р. каждый час после трех часов работы. Если длительность работ<br>
+                                превышает сутки, то по окончании смены системного администратора сумма замораживается до<br>
+                                начала смены. Режим работы - без выходных, с 9:00 до 18:00.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="connect-modal" class="modal">
+                <div class="modal-content dark">
+                    <div class="flex-horizontal" style="align-items: center">
+                        <h2>Подключиться</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="flex-horizontal">
+                        <form action="">
+                            <div class="flex-horizontal" style="align-items: center">
+                                <div>
+                                    <input type="text" name="name" placeholder="Ваше имя" class="dark modal-input input-required"><br>
+                                    <input type="text" name="phone" placeholder="Ваш телефон" class="dark modal-input input-required"><br>
+                                    <input type="text" name="email" placeholder="Ваш e-mail" class="dark modal-input"><br>
+                                </div>
+                                <p>Красным выделены <em>обязательные</em> поля</p>
+                                <p>
+                                    Наш консультант позвонит вам<br>
+                                    в течение следующих 3 часов и<br>
+                                    постарается ответить на все<br>
+                                    ваши вопросы.<br>
+                                    Мы ценим ваше время, а также<br>
+                                    надеемся, что вы выберете нас.
+                                </p>
+                            </div>
+                            <div class="flex-horizontal" style="align-items: center; height: 50px;">
+                                <input type="submit" name="submit" class="connect-button dark"></input>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/falling-scroll.js"></script>
+    </body>
+</html>
+
+

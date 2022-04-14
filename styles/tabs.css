@@ -1,0 +1,25 @@
+.tab
+{
+    display: none;
+    animation: 0.1s ease-in-out 0 1 forwards forwards paused collapse;
+}
+.tab-current
+{
+    display: block;
+    height: auto;
+    animation: 0.1s ease-in-out 0 1 forwards forwards paused expand;
+}
+.tab-control
+{
+    border: none;
+    border-bottom: 3px solid var(--applered);
+    padding: 5px 15px;
+    margin: 0;
+    background: none;
+    font-size: 18pt;
+    transition: padding 0.2s ease-in-out;
+}
+.tab-control:hover
+{
+    padding-bottom: 15px;
+}
