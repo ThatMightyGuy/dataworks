@@ -26,7 +26,7 @@ button{
 #sine-flow
 {
     width: 100%;
-    height: 60vh;
+    height: clamp(60vh, 60vh, 90vh);
     position: fixed;
     top: 0;
     left: 0;
@@ -143,7 +143,7 @@ h1{
 .content-container
 {
     position: absolute;
-    top: 60vh;
+    top: clamp(10vh, 60vh, 90vh);
     left: 0;
     margin: 0;
     width: 90vw;
